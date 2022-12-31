@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soccer</title>
+</head>
+<body>
+    <h1>Program - Calculate points of soccer teams</h1>
+    <script>
+        function jumpLine(){
+            document.write("<br>");
+            document.write("<br>");
+        }
+        function print(frase){
+            document.write(frase);
+            jumpLine();
+        }
+    </script>
+    <script>//Prompt: returns strings, concatenates if there is a sum.
+        var wins = parseInt(prompt("Quantity of victories"));
+        //Transform text to number ParseInt
+        var ties = parseInt(prompt("Quantity of ties"));
+        totalPoints= wins*3+ties;
+        print("Total Points of the team: " + totalPoints);
+    </script>
+    <script>
+        if (totalPoints>28){
+         print("The team is better than last year");
+        }
+        if (totalPoints<28){
+            print("The team is worse than last year");
+        }
+        if(totalPoints==28){
+            print("The team is like last year");
+        }
+    </script>
+    
+</body>
+</html>
