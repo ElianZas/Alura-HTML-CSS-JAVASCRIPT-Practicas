@@ -23,8 +23,13 @@
         var returnedNumber=parseInt(prompt("Enter a number between 0-10. YOU HAVE 3 CHANCES"));
         var chances=0;
         while (inputNumber!=returnedNumber && chances!=2){
-            var returnedNumber=parseInt(prompt("Number "+returnedNumber+" isn't the number. TRY AGAIN! Enter a number between 0-10"));
-            var chances=chances+1;
+            if (returnedNumber > inputNumber){
+                var returnedNumber=parseInt(prompt("Game number is smaller than "+returnedNumber+". TRY AGAIN! Enter a number between 0-10"));
+                var chances=chances+1;
+            }else{
+                var returnedNumber=parseInt(prompt("Game number is bigger than "+returnedNumber+". TRY AGAIN! Enter a number between 0-10"));
+                var chances=chances+1;
+            }
         }
         if (inputNumber==returnedNumber){
             print("NUMBER GUESSED!");
