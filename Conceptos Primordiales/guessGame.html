@@ -20,12 +20,16 @@
     </script>
     <script>
         var inputNumber=Math.round(Math.random()*10);
-        var returnedNumber=parseInt(prompt("Enter a number between 0-10"));
-        while (inputNumber!=returnedNumber){
+        var returnedNumber=parseInt(prompt("Enter a number between 0-10. YOU HAVE 3 CHANCES"));
+        var chances=0;
+        while (inputNumber!=returnedNumber && chances!=2){
             var returnedNumber=parseInt(prompt("Number "+returnedNumber+" isn't the number. TRY AGAIN! Enter a number between 0-10"));
+            var chances=chances+1;
         }
         if (inputNumber==returnedNumber){
             print("NUMBER GUESSED!");
+        }else{
+            print("YOU LOSE");
         }
     </script>
     
