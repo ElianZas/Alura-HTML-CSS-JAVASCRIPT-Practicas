@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Guess GAME</h1>
+    <script>
+        function lineBreak(){
+            document.write("<br>");
+            document.write("<br>");
+        }
+        function print(frase){
+            document.write(frase);
+            lineBreak();
+        }
+    </script>
+    <script>
+        var inputNumber=Math.round(Math.random()*10);
+        var returnedNumber=parseInt(prompt("Enter a number between 0-10"));
+        while (inputNumber!=returnedNumber){
+            var returnedNumber=parseInt(prompt("Number "+returnedNumber+" isn't the number. TRY AGAIN! Enter a number between 0-10"));
+        }
+        if (inputNumber==returnedNumber){
+            print("NUMBER GUESSED!");
+        }
+    </script>
+    
+</body>
+</html>
