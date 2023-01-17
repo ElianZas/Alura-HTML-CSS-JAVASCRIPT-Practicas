@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promediate familyAges</title>
+</head>
+<body>
+    <script>
+        function lineBreak(){
+            document.write("<br>");
+            document.write("<br>");
+        }
+        function print(frase){
+            document.write(frase);
+            lineBreak();
+        }
+    </script>
+    <script>
+        var familyMembers = parseInt(prompt("Enter how many members are in your family"));
+        var x =1;
+        var totalAges=0;
+        while(x<=familyMembers){
+            age=parseInt(prompt("Enter age of family member"));
+            totalAges= totalAges + age;
+            x++;
+        }
+        
+        averageAges= totalAges/familyMembers;
+        print("Average of ages of family members is " +averageAges);
+        print("fin");
+    </script>
+</body>
+</html>

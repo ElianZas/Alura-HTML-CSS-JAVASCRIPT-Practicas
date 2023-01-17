@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Guess GAME</h1>
+    <script>
+        function lineBreak(){
+            document.write("<br>");
+            document.write("<br>");
+        }
+        function print(frase){
+            document.write(frase);
+            lineBreak();
+        }
+    </script>
+    <script>
+        var inputNumber=Math.round(Math.random()*10);
+        var chances=3;
+        var x = 1;
+        while(x<=chances){
+        var returnedNumber=parseInt(prompt("Enter a number between 0-10. YOU HAVE 3 CHANCES"));
+        if(inputNumber == returnedNumber){
+            alert("Number Guessed on try "+ x +", Congrats!" + " the number was "+ inputNumber);
+            break;
+        }else if (returnedNumber > inputNumber){
+            alert("Game number is smaller than "+returnedNumber+". TRY AGAIN!");
+        }else{
+            alert("Game number is bigger than "+returnedNumber+". TRY AGAIN!");
+        }
+        x++;
+    }
+    alert("YOU LOST ALL YOUR CHANCES")
+    </script>
+    
+</body>
+</html>

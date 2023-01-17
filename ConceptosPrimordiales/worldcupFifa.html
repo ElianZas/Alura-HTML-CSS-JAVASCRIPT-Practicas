@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Fifa World Cup year</title>
+</head>
+<body>
+    <script>
+        function lineBreak(){
+            document.write("<br>");
+            document.write("<br>");
+        }
+        function print(frase){
+            document.write(frase);
+            lineBreak();
+        }
+    </script>
+    <script>
+        var worldcupYear=1930;
+        var limit= parseInt(prompt("Enter limit year to calculate"));
+
+        while (worldcupYear<=limit){
+            print("There was a fifa World Cup in " + worldcupYear);
+            worldcupYear= worldcupYear+4;
+        }
+        print("fin");
+    </script>
+</body>
+</html>
