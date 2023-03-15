@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="600" height="400"></canvas>
+
+<script>
+    var screen = document.querySelector('canvas');
+    var brush = screen.getContext('2d');
+    var colors = ["red", "green", "blue"];
+    var actualColor = [0];  
+    brush.fillStyle = 'grey';
+    brush.fillRect(0, 0, 600, 400);
+
+
+    sizeX= 50;
+    sizeY= 50;
+    var canDraw = false;
+
+
+    function drawCircle(x,y,actualColor) {
+    
+        if(canDraw) {
+            brush.fillStyle = colors[actualColor];
+            brush.beginPath();
+            brush.arc(x, y, 5, 0, 2 * 3.14);
+            brush.fill();
+        }
+    }
+    function drawBox(x, y, color) {
+        var screen = document.querySelector("canvas");
+        var brush =  screen.getContext ("2d");
+        brush.fillStyle = color; 
+        brush.fillRect(x,y,sizeX,sizeY);
+        brush.fill();
+    }
+    function drawColorPalette(){
+        for (var x = 0; x < 50; x = x+50){
+        drawBox(x, 0, colors[0], sizeX,sizeY);
+        drawBox(x+50, 0, colors[1], sizeX,sizeY);
+        drawBox(x+100, 0, colors[2], sizeX,sizeY);
+        }
+    }
+
+
+    function chooseColor(x,y,color) {
+        var x = event.pageX - screen.offsetLeft;
+        var y = event.pageY - screen.offsetTop;
+        if((x < 50) && (x>0) && (y<50) && (y>0)){
+            actualColor = [0];
+        }
+        if((x < 100) && (x>50)&& (y<50) && (y>0)){
+            actualColor = [1];
+        }
+        if((x < 150) && (x>100) && (y<50) && (y>0)){
+            actualColor = [2];
+        }
+    }    
+
+    function activateDraw() {
+
+        canDraw = true;
+    }
+
+    function deactivateDraw() {
+
+        canDraw = false;
+    }
+
+    function areaDraw(xCoordenada,yCoordenada){
+    
+        if ((xCoordenada >= 0 && xCoordenada < (3*sizeY+5)) && 
+            (yCoordenada >=0 && yCoordenada < (sizeX+5))) {
+
+            return false;
+
+        } else{
+
+            return true;
+
+        }
+    }    
+    function movementMouse(event){
+    
+    var x = event.pageX - screen.offsetLeft;
+    var y = event.pageY - screen.offsetTop;
+
+        if (areaDraw(x,y)){
+
+                drawCircle(x,y,actualColor);
+
+        }
+
+    }
+
+    screen.onmousemove = movementMouse;
+    screen.onmousedown = activateDraw;
+    screen.onmouseup = deactivateDraw;
+    drawColorPalette();
+    screen.onclick = chooseColor;
+
+</script>
+</body>
+</html>

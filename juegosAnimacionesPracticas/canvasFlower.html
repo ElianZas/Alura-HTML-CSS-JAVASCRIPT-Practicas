@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="600" height="400"><!--Creates an area where we can make graphics, make figures, use images, etc-->
+
+    </canvas>
+    <script>
+        var screen = document.querySelector("canvas");
+        var brush = screen.getContext("2d");
+        brush.fillStyle = "lightgray";
+        brush.fillRect(0, 0, 600, 400);
+
+        function drawCircle(x, y, radio, color) {
+
+            brush.fillStyle = color;
+            brush.beginPath();
+            brush.arc(x, y, radio, 0, 2*3.14);
+            brush.fill();
+        } 
+        drawCircle(300, 200, 20, "red");
+        drawCircle(340, 200, 20, "black");
+        drawCircle(300, 160, 20, "yellow");
+        drawCircle(260, 200, 20, "orange");
+        drawCircle(300, 240, 20, "blue");
+
+
+    </script>
+    
+</body>
+</html>
